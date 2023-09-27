@@ -1,0 +1,17 @@
+
+.header-wrapper {
+    background-color: rgb(245, 90, 90);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header-text {
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    letter-spacing: 2px;
+}
