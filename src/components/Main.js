@@ -45,7 +45,14 @@ export default function Main() {
     function toggleItem(id) {
         setToDoItem(prevState => {
             const newState = prevState.map(item => item.id === id ? {...item, isDone: !item.isDone} : item)
-            return [...newState.filter(item => item.id !== id), newState.find(item => item.id === id)]
+            const filteredNewState = newState.filter((item) => item.id !== id)
+            const modifiedItem = newState.find((item) => item.id === id)
+            if(modifiedItem.isDone) {
+                return [...filteredNewState, modifiedItem]
+            }
+            else {
+                return [modifiedItem, ...filteredNewState]
+            }
         })
     }
 
