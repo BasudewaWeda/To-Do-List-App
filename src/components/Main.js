@@ -65,7 +65,7 @@ export default function Main() {
     function shiftItemUp(id, name) {
         const indexCheck = toDoItem.findIndex(object => object.id === id)
         console.log(name);
-        if(indexCheck > 0) {
+        if(indexCheck > 0 && (toDoItem[indexCheck - 1].isDone === toDoItem[indexCheck].isDone)) {
             setToDoItem(prevState => {
                 let newState = [...prevState]
                 let temp = newState[indexCheck]
@@ -78,7 +78,7 @@ export default function Main() {
 
     function shiftItemDown(id) {
         const indexCheck = toDoItem.findIndex(object => object.id === id)
-        if(indexCheck < toDoItem.length - 1) {
+        if(indexCheck < toDoItem.length - 1 && (toDoItem[indexCheck + 1].isDone === toDoItem[indexCheck].isDone)) {
             setToDoItem(prevState => {
                 let newState = [...prevState]
                 let temp = newState[indexCheck]
